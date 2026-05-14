@@ -201,13 +201,16 @@ export default function RaveAstra() {
                  <Compass className="absolute -right-4 -bottom-4 w-40 h-40 text-white/10 rotate-12 group-hover:rotate-[372deg] transition-transform duration-[3000ms]" />
                </motion.div>
 
-               <motion.button
+               <motion.a
+                  href="https://forms.gle/4QuwtG2CNxQa9phy6"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, rotate: -2 }}
                   whileTap={{ scale: 0.9 }}
                   className="px-12 py-8 bg-white text-black font-black text-3xl uppercase tracking-[0.3em] shadow-[15px_15px_0_#ff00ff] flex items-center gap-4 group"
                 >
                   GET TICKETS <Ticket size={32} className="group-hover:rotate-12 transition-transform" />
-                </motion.button>
+                </motion.a>
             </div>
           </div>
         </div>
