@@ -213,6 +213,66 @@ export default function RaveAstra() {
         </div>
       </div>
 
+      {/* Meet the Team Section - New! */}
+      <section className="relative z-10 py-32 px-6 md:px-12 bg-black/30">
+        <div className="max-w-7xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-5xl md:text-8xl font-black italic uppercase tracking-tighter text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+              MEET THE <span className="text-neon-magenta">TEAM</span>
+            </h2>
+            <p className="text-neon-cyan font-black uppercase tracking-[0.5em] mt-4 text-sm md:text-base">Organizing Committee</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12">
+            {[
+              { name: "Wasay", role: "General Secretary", img: "/team/wasay.jpg", tilt: -3 },
+              { name: "Aneeqa", role: "Marketing", img: "/team/aneeqa.jpg", tilt: 2 },
+              { name: "Deerain", role: "Finance", img: "/team/deerain.jpg", tilt: -2 },
+              { name: "Anas", role: "Event Management", img: "/team/anas.jpg", tilt: 3 },
+              { name: "Ayan", role: "Finance", img: "/team/ayan.jpg", tilt: -4 },
+            ].map((member, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="flex flex-col items-center group"
+              >
+                {/* Sticker Frame */}
+                <motion.div 
+                  whileHover={{ scale: 1.05, rotate: 0 }}
+                  style={{ rotate: member.tilt }}
+                  className="relative w-full aspect-[4/5] border-[8px] border-white shadow-xl overflow-hidden bg-white/5"
+                >
+                  <img 
+                    src={member.img} 
+                    alt={member.name} 
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                </motion.div>
+
+                {/* Info */}
+                <div className="mt-6 text-center">
+                  <h3 className="text-2xl font-black italic uppercase tracking-tighter text-white group-hover:text-neon-cyan transition-colors">
+                    {member.name}
+                  </h3>
+                  <p className="text-[10px] font-black uppercase tracking-[0.3em] text-neon-magenta mt-1">
+                    {member.role}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Marquee Footer */}
       <div className="fixed bottom-0 left-0 w-full bg-white text-black py-3 overflow-hidden whitespace-nowrap z-50">
         <motion.div 
