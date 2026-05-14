@@ -230,9 +230,9 @@ export default function RaveAstra() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12">
             {[
-              { name: "Wasay", role: "General Secretary", img: "/team/wasay.jpg", tilt: -3 },
-              { name: "Aneeqa", role: "Marketing", img: "/team/aneeqa.jpg", tilt: 2 },
               { name: "Deerain", role: "Finance", img: "/team/deerain.jpg", tilt: -2 },
+              { name: "Aneeqa", role: "Marketing", img: "/team/aneeqa.jpg", tilt: 2 },
+              { name: "Wasay", role: "General Secretary", img: "/team/wasay.jpg", tilt: -3 },
               { name: "Anas", role: "Event Management", img: "/team/anas.jpg", tilt: 3 },
               { name: "Ayan", role: "Finance", img: "/team/ayan.jpg", tilt: -4 },
             ].map((member, i) => (
@@ -274,15 +274,72 @@ export default function RaveAstra() {
       </section>
 
       {/* Marquee Footer */}
-      <div className="fixed bottom-0 left-0 w-full bg-white text-black py-3 overflow-hidden whitespace-nowrap z-50">
+      <div className="relative z-50 w-full bg-white text-black py-4 overflow-hidden whitespace-nowrap border-y-4 border-black">
         <motion.div 
           animate={{ x: [0, -1000] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="inline-block text-xl font-black uppercase tracking-tighter"
+          className="inline-block text-2xl font-black uppercase tracking-tighter"
         >
           REGISTRATIONS ARE LIVE NOW • LIMITED TICKETS REMAINING • JASON THOMAS LIVE • MAY 16TH • MEDIA STUDIO 154 CAMPUS • RAVE ASTRA • REGISTRATIONS ARE LIVE NOW • LIMITED TICKETS REMAINING • 
         </motion.div>
       </div>
+
+      {/* Premium Footer */}
+      <footer className="relative z-10 pt-32 pb-10 px-6 md:px-12 bg-[#050505] overflow-hidden">
+        {/* Decorative Grid for Footer */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+        
+        <div className="max-w-7xl mx-auto flex flex-col items-center">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="mb-16 text-center"
+          >
+            <div className="border-2 border-white/20 px-8 py-4 inline-block mb-4">
+               <h2 className="text-4xl md:text-6xl font-black tracking-[-0.1em] text-white">PAS</h2>
+            </div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.6em] text-neon-cyan">Performing Arts Society</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 w-full text-center md:text-left border-t border-white/10 pt-16">
+            <div>
+               <h4 className="text-neon-magenta font-black uppercase tracking-widest mb-6">Explore</h4>
+               <ul className="space-y-4 text-sm font-bold uppercase tracking-wider text-white/50">
+                  <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
+                  <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
+                  <li><a href="#" className="hover:text-white transition-colors">Lineup</a></li>
+               </ul>
+            </div>
+            <div className="flex flex-col items-center">
+               <h4 className="text-neon-cyan font-black uppercase tracking-widest mb-6">Stay Connected</h4>
+               <div className="flex gap-8">
+                  {[
+                    { icon: 'IG', color: 'hover:text-neon-magenta' },
+                    { icon: 'TW', color: 'hover:text-neon-cyan' },
+                    { icon: 'FB', color: 'hover:text-neon-lime' },
+                  ].map((social, i) => (
+                    <a key={i} href="#" className={`text-2xl font-black italic ${social.color} transition-all hover:scale-125`}>
+                      {social.icon}
+                    </a>
+                  ))}
+               </div>
+            </div>
+            <div className="md:text-right">
+               <h4 className="text-neon-lime font-black uppercase tracking-widest mb-6">Contact</h4>
+               <p className="text-sm font-bold text-white/50 mb-2">INFO@PAS-RAVE.COM</p>
+               <p className="text-sm font-bold text-white/50">+92 300 ASTRA-00</p>
+            </div>
+          </div>
+
+          <div className="mt-32 w-full flex flex-col md:flex-row justify-between items-center text-[10px] font-black uppercase tracking-[0.4em] text-white/20 border-t border-white/5 pt-8">
+            <p>© 2026 PERFORMING ARTS SOCIETY. ALL RIGHTS RESERVED.</p>
+            <p>DESIGNED FOR THE COSMOS</p>
+          </div>
+        </div>
+        
+        {/* Scanline Effect */}
+        <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.02),rgba(0,255,0,0.01),rgba(0,0,255,0.02))] bg-[length:100%_2px,3px_100%]" />
+      </footer>
 
       <style jsx global>{`
         .outline-text {
