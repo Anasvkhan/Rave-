@@ -92,17 +92,17 @@ export default function RaveAstra() {
            </motion.div>
         </nav>
 
-        {/* Header: PAS Logo - Now MUCH MORE PROMINENT */}
+        {/* Header: Performing Arts Society PRESENTS */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="flex flex-col items-center md:items-start mt-10 mb-20"
         >
           <div className="border-4 border-white px-10 py-6 flex flex-col items-center justify-center bg-black/50 backdrop-blur-md">
-            <h2 className="text-7xl md:text-9xl font-black tracking-[-0.1em] leading-none flex items-baseline gap-4">
-              PAS <span className="text-2xl md:text-4xl tracking-[0.2em] opacity-70">PRESENTS</span>
+            <h2 className="text-4xl md:text-6xl font-black tracking-[-0.05em] leading-none flex flex-col items-center md:items-start gap-2">
+              <span className="text-neon-cyan">PERFORMING ARTS SOCIETY</span>
+              <span className="text-white/70 text-2xl md:text-4xl tracking-[0.4em]">PRESENTS</span>
             </h2>
-            <p className="text-sm md:text-base uppercase tracking-[0.4em] font-bold mt-2 text-neon-cyan text-center">Performing Arts Society</p>
           </div>
         </motion.div>
 
