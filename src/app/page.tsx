@@ -234,11 +234,11 @@ export default function RaveAstra() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
             {[
               { name: "Deerain", role: "Finance", img: "/team/deerain.jpg", tilt: -2 },
-              { name: "Aneeqa", role: "Marketing", img: "/team/aneeqa.jpg", tilt: 2 },
               { name: "Wasay", role: "General Secretary", img: "/team/wasay.jpg", tilt: -3 },
+              { name: "Aneeqa", role: "Marketing", img: "/team/aneeqa.jpg", tilt: 2 },
               { name: "Anas", role: "Event Management", img: "/team/anas.jpg", tilt: 3 },
               { name: "Ayan", role: "Finance", img: "/team/ayan.jpg", tilt: -4 },
-              { name: "Zainab", role: "Marketing", img: "/team/zainab.png", tilt: 2 },
+              { name: "Zaynab", role: "Marketing", img: "/team/zainab.png", tilt: 2 },
               { name: "Qurat", role: "Marketing", img: "/team/qurat.png", tilt: -3 },
               { name: "Rehmani", role: "Event Management", img: "/team/rehmani.png", tilt: 4 },
               { name: "Ahmed Asim", role: "Event Management", img: "/team/ahmed.png", tilt: -2 },
