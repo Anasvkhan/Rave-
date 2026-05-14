@@ -1,65 +1,243 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { motion } from "framer-motion";
+import { Calendar, MapPin, Music, Ticket, Zap, Waves, Glasses, Sparkles, Compass, Star, Clock } from "lucide-react";
+import Link from "next/link";
+import React, { useState, useEffect } from "react";
+
+const CountdownTimer = () => {
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    const targetDate = new Date("May 16, 2026 18:30:00").getTime();
+
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        clearInterval(interval);
+      } else {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((difference % (1000 * 60)) / 1000),
+        });
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="flex gap-4 md:gap-8 bg-black/40 backdrop-blur-md p-6 rounded-2xl border border-white/10">
+      {[
+        { label: "Days", value: timeLeft.days },
+        { label: "Hours", value: timeLeft.hours },
+        { label: "Mins", value: timeLeft.minutes },
+        { label: "Secs", value: timeLeft.seconds },
+      ].map((item, index) => (
+        <div key={index} className="flex flex-col items-center min-w-[60px]">
+          <span className="text-3xl md:text-5xl font-black text-neon-cyan italic drop-shadow-[0_0_10px_rgba(0,242,255,0.5)]">
+            {item.value.toString().padStart(2, '0')}
+          </span>
+          <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50">{item.label}</span>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      ))}
     </div>
+  );
+};
+
+const AudioVisualizer = () => {
+  return (
+    <div className="flex items-center justify-center gap-1.5 h-32 md:h-48 w-full">
+      {[...Array(24)].map((_, i) => (
+        <motion.div
+          key={i}
+          animate={{ height: [20, 100, 40, 120, 30][i % 5] + "px" }}
+          transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.05, ease: "easeInOut" }}
+          className={`w-1.5 md:w-2 rounded-full ${
+            i % 3 === 0 ? "bg-neon-cyan" : i % 3 === 1 ? "bg-neon-lime" : "bg-neon-magenta"
+          } shadow-[0_0_10px_currentColor]`}
+        />
+      ))}
+    </div>
+  );
+};
+
+export default function RaveAstra() {
+  return (
+    <main className="min-h-screen bg-[#050505] text-white overflow-hidden relative selection:bg-neon-magenta/40 font-sans pb-20">
+      
+      {/* Background Layer */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+         <div className="absolute top-[20%] left-[10%] w-[1px] h-[1px] shadow-[0_0_300px_150px_rgba(0,242,255,0.15)] rounded-full" />
+         <div className="absolute bottom-[20%] right-[10%] w-[1px] h-[1px] shadow-[0_0_300px_150px_rgba(255,0,255,0.15)] rounded-full" />
+      </div>
+
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
+        
+        {/* Navigation */}
+        <nav className="flex justify-between items-center py-8">
+           <Link href="/about" className="text-sm font-black uppercase tracking-[0.3em] text-white/50 hover:text-neon-cyan transition-colors border-b-2 border-transparent hover:border-neon-cyan pb-1">
+             About Event
+           </Link>
+           <motion.div 
+             animate={{ scale: [1, 1.1, 1] }}
+             transition={{ duration: 2, repeat: Infinity }}
+             className="bg-neon-magenta px-4 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-[0_0_15px_#ff00ff]"
+           >
+             Registrations Are Live
+           </motion.div>
+        </nav>
+
+        {/* Header: PAS Logo - Now MUCH MORE PROMINENT */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="flex flex-col items-center md:items-start mt-10 mb-20"
+        >
+          <div className="border-4 border-white px-10 py-6 flex flex-col items-center justify-center bg-black/50 backdrop-blur-md">
+            <h2 className="text-7xl md:text-9xl font-black tracking-[-0.1em] leading-none flex items-baseline gap-4">
+              PAS <span className="text-2xl md:text-4xl tracking-[0.2em] opacity-70">PRESENTS</span>
+            </h2>
+            <p className="text-sm md:text-base uppercase tracking-[0.4em] font-bold mt-2 text-neon-cyan text-center">Performing Arts Society</p>
+          </div>
+        </motion.div>
+
+        <div className="flex flex-col md:flex-row items-start justify-between gap-16">
+          
+          {/* Left Side: Title & DJ Sticker */}
+          <div className="w-full md:w-3/5 space-y-12">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="relative"
+            >
+              <h1 className="text-[18vw] md:text-[13vw] font-black italic leading-[0.75] tracking-tighter uppercase">
+                <span className="text-layered-rave block skew-x-[-12deg]">RAVE</span>
+                <span className="text-white block skew-x-[-12deg] outline-text drop-shadow-[0_0_40px_rgba(255,0,255,0.6)]">ASTRA</span>
+              </h1>
+            </motion.div>
+
+            {/* DJ Sticker Section - New! */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5 }}
+              className="relative pt-10"
+            >
+              {/* Sticker Container */}
+              <div className="relative group w-fit">
+                <motion.div 
+                   animate={{ rotate: [-2, 2, -2] }}
+                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                   className="relative z-10 w-64 h-80 md:w-80 md:h-[400px] border-[12px] border-white shadow-[20px_20px_0_rgba(0,0,0,0.5)] overflow-hidden"
+                >
+                  <img 
+                    src="/jason.png" 
+                    alt="Jason Thomas" 
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+                </motion.div>
+                
+                {/* Decorative Sticker elements */}
+                <div className="absolute -top-6 -left-6 z-20 bg-neon-lime text-black font-black p-3 rotate-[-15deg] shadow-lg text-sm uppercase">
+                  Live Sets
+                </div>
+                <div className="absolute -bottom-4 -right-4 z-20 bg-neon-cyan text-black font-black p-3 rotate-[10deg] shadow-lg text-sm uppercase">
+                  Astra Headliner
+                </div>
+              </div>
+
+              {/* DJ Name Label */}
+              <div className="mt-8">
+                <p className="text-neon-magenta text-sm uppercase font-black tracking-[0.5em] mb-2 drop-shadow-[0_0_5px_rgba(255,0,255,0.5)]">Starring</p>
+                <h3 className="text-6xl md:text-9xl font-black italic uppercase tracking-tighter text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]">
+                  JASON THOMAS
+                </h3>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right Side: Details & Timer */}
+          <div className="w-full md:w-2/5 flex flex-col items-center md:items-end space-y-16">
+            
+            {/* Timer - Now functional and prominent */}
+            <div className="flex flex-col items-center md:items-end gap-4">
+              <p className="text-xs font-black uppercase tracking-[0.5em] text-white/50 flex items-center gap-2">
+                <Clock size={16} className="text-neon-cyan" /> Event Countdown
+              </p>
+              <CountdownTimer />
+            </div>
+
+            <div className="w-full py-8 border-y border-white/10">
+              <AudioVisualizer />
+            </div>
+
+            <div className="flex flex-col items-center md:items-end space-y-10 w-full">
+               <div className="text-center md:text-right">
+                 <h4 className="text-6xl md:text-8xl font-black text-neon-yellow italic tracking-tighter uppercase leading-none drop-shadow-[0_0_20px_rgba(248,255,0,0.8)]">
+                   MAY 16
+                 </h4>
+                 <p className="text-2xl md:text-3xl font-bold text-white/80 mt-2 tracking-widest uppercase italic">6:30 PM ONWARDS</p>
+               </div>
+
+               {/* Red Location Box */}
+               <motion.div 
+                 whileHover={{ scale: 1.02 }}
+                 className="bg-location-box p-12 w-full relative group overflow-hidden border-4 border-neon-red/50 shadow-[0_0_40px_rgba(255,51,102,0.4)]"
+               >
+                 <div className="relative z-10">
+                    <h3 className="text-sm font-black uppercase tracking-[0.5em] text-white/70 mb-3 flex items-center gap-2">
+                      <MapPin size={18} /> Location:
+                    </h3>
+                    <p className="text-4xl md:text-6xl font-black uppercase leading-tight italic text-white">
+                      MEDIA STUDIO <br/> 154 CAMPUS
+                    </p>
+                 </div>
+                 <Compass className="absolute -right-4 -bottom-4 w-40 h-40 text-white/10 rotate-12 group-hover:rotate-[372deg] transition-transform duration-[3000ms]" />
+               </motion.div>
+
+               <motion.button
+                  whileHover={{ scale: 1.1, rotate: -2 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="px-12 py-8 bg-white text-black font-black text-3xl uppercase tracking-[0.3em] shadow-[15px_15px_0_#ff00ff] flex items-center gap-4 group"
+                >
+                  GET TICKETS <Ticket size={32} className="group-hover:rotate-12 transition-transform" />
+                </motion.button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Marquee Footer */}
+      <div className="fixed bottom-0 left-0 w-full bg-white text-black py-3 overflow-hidden whitespace-nowrap z-50">
+        <motion.div 
+          animate={{ x: [0, -1000] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="inline-block text-xl font-black uppercase tracking-tighter"
+        >
+          REGISTRATIONS ARE LIVE NOW • LIMITED TICKETS REMAINING • JASON THOMAS LIVE • MAY 16TH • MEDIA STUDIO 154 CAMPUS • RAVE ASTRA • REGISTRATIONS ARE LIVE NOW • LIMITED TICKETS REMAINING • 
+        </motion.div>
+      </div>
+
+      <style jsx global>{`
+        .outline-text {
+          -webkit-text-stroke: 3px white;
+          color: transparent;
+        }
+        .text-layered-rave {
+          color: #fff;
+          text-shadow: 
+            0 0 10px #00f2ff,
+            0 0 20px #00f2ff,
+            0 0 40px #ff00ff,
+            0 0 80px #ff00ff;
+        }
+      `}</style>
+    </main>
   );
 }
