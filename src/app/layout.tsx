@@ -13,8 +13,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "RAVE ASTRA | Jason Thomas Live",
-  description: "Join the most electrifying rave of the year. RAVE ASTRA presented by PAS. Saturday 16th May @ Media Studio.",
+  title: "RAVE ASTRA 2.0 | Secret Headliner Live",
+  description: "Join the most electrifying rave of the year. RAVE ASTRA 2.0 presented by PAS. Saturday 16th May @ Media Studio.",
 };
 
 export default function RootLayout({

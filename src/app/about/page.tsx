@@ -7,11 +7,11 @@ import React from "react";
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#050505] text-white overflow-hidden relative selection:bg-neon-magenta/40 font-sans p-6 md:p-12">
+    <main className="min-h-screen bg-[#0b0014] text-white overflow-hidden relative selection:bg-neon-magenta/40 font-sans p-6 md:p-12">
       
       {/* Background Decor */}
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(0,242,255,0.1),transparent_70%)]" />
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(163,0,255,0.12),transparent_70%)]" />
       </div>
 
       <nav className="relative z-10 mb-16">
@@ -32,7 +32,7 @@ export default function AboutPage() {
             The Astra Story
           </div>
           <h1 className="text-6xl md:text-8xl font-black italic uppercase tracking-tighter leading-none mb-8">
-            ABOUT <br/> <span className="text-neon-cyan">RAVE ASTRA</span>
+            ABOUT <br/> <span className="text-neon-cyan">RAVE ASTRA 2.0</span>
           </h1>
           <p className="text-xl md:text-2xl text-white/70 font-medium leading-relaxed italic">
             "More than just a party—it's a cosmic vibration where technology meets the soul."
@@ -53,7 +53,7 @@ export default function AboutPage() {
               <h2 className="text-2xl font-black uppercase tracking-widest">Our Vision</h2>
             </div>
             <p className="text-white/60 leading-loose">
-              Rave Astra was born from the desire to push the boundaries of the local electronic scene. We blend cutting-edge visual production with world-class soundscapes to create an environment where you can lose yourself and find your rhythm.
+              Rave Astra 2.0 is back, pushing the boundaries of the local electronic scene even further. We blend cutting-edge visual production with world-class soundscapes to create an environment where you can lose yourself and find your rhythm.
             </p>
           </motion.div>
 
@@ -102,7 +102,7 @@ export default function AboutPage() {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="px-16 py-8 bg-white text-black font-black text-2xl uppercase tracking-[0.3em] shadow-[10px_10px_0_#ff00ff]"
+              className="px-16 py-8 bg-white text-black font-black text-2xl uppercase tracking-[0.3em] shadow-[10px_10px_0_#ff1f8f]"
             >
               Get Your Tickets
             </motion.button>

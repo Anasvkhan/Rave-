@@ -3,17 +3,17 @@
 @theme {
   --font-sans: var(--font-inter);
   --font-heading: var(--font-outfit);
-  
-  --color-neon-cyan: #00f2ff;
-  --color-neon-magenta: #ff00ff;
-  --color-neon-lime: #ccff00;
-  --color-neon-yellow: #f8ff00;
-  --color-neon-red: #ff3366;
-  --color-dark-bg: #050505;
+
+  --color-neon-cyan: #a300ff;
+  --color-neon-magenta: #ff1f8f;
+  --color-neon-lime: #39ff14;
+  --color-neon-yellow: #ff6a00;
+  --color-neon-red: #ff1744;
+  --color-dark-bg: #0b0014;
 }
 
 :root {
-  --background: #050505;
+  --background: #0b0014;
   --foreground: #ffffff;
 }
 
@@ -29,30 +29,30 @@
 
 @layer utilities {
   .text-glow-cyan {
-    text-shadow: 0 0 10px rgba(0, 242, 255, 0.7), 0 0 20px rgba(0, 242, 255, 0.4);
+    text-shadow: 0 0 10px rgba(163, 0, 255, 0.7), 0 0 20px rgba(163, 0, 255, 0.4);
   }
   .text-glow-magenta {
-    text-shadow: 0 0 10px rgba(255, 0, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.4);
+    text-shadow: 0 0 10px rgba(255, 31, 143, 0.7), 0 0 20px rgba(255, 31, 143, 0.4);
   }
   .text-layered-rave {
     color: #fff;
-    text-shadow: 
-      0 0 5px #00f2ff,
-      0 0 10px #00f2ff,
-      0 0 20px #ff00ff,
-      0 0 40px #ff00ff;
+    text-shadow:
+      0 0 5px #a300ff,
+      0 0 10px #a300ff,
+      0 0 20px #ff1f8f,
+      0 0 40px #ff1f8f;
   }
   .bg-location-box {
-    background: linear-gradient(135deg, #ff3366 0%, #7d0022 100%);
-    border: 3px solid #ff3366;
-    box-shadow: 0 0 20px rgba(255, 51, 102, 0.5);
+    background: linear-gradient(135deg, #ff1744 0%, #4a0033 100%);
+    border: 3px solid #ff1744;
+    box-shadow: 0 0 20px rgba(255, 23, 68, 0.5);
   }
   .neon-border {
-    box-shadow: 0 0 15px rgba(0, 242, 255, 0.3), inset 0 0 15px rgba(0, 242, 255, 0.3);
+    box-shadow: 0 0 15px rgba(163, 0, 255, 0.3), inset 0 0 15px rgba(163, 0, 255, 0.3);
     @apply border border-neon-cyan/50;
   }
   .audio-wave {
-    background: linear-gradient(180deg, transparent 0%, #00f2ff 50%, transparent 100%);
+    background: linear-gradient(180deg, transparent 0%, #a300ff 50%, transparent 100%);
   }
 }
 

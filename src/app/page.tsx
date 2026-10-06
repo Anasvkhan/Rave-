@@ -39,7 +39,7 @@ const CountdownTimer = () => {
         { label: "Secs", value: timeLeft.seconds },
       ].map((item, index) => (
         <div key={index} className="flex flex-col items-center min-w-[60px]">
-          <span className="text-3xl md:text-5xl font-black text-neon-cyan italic drop-shadow-[0_0_10px_rgba(0,242,255,0.5)]">
+          <span className="text-3xl md:text-5xl font-black text-neon-cyan italic drop-shadow-[0_0_10px_rgba(163,0,255,0.5)]">
             {item.value.toString().padStart(2, '0')}
           </span>
           <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50">{item.label}</span>
@@ -68,12 +68,12 @@ const AudioVisualizer = () => {
 
 export default function RaveAstra() {
   return (
-    <main className="min-h-screen bg-[#050505] text-white overflow-hidden relative selection:bg-neon-magenta/40 font-sans pb-20">
+    <main className="min-h-screen bg-[#0b0014] text-white overflow-hidden relative selection:bg-neon-magenta/40 font-sans pb-20">
       
       {/* Background Layer */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-         <div className="absolute top-[20%] left-[10%] w-[1px] h-[1px] shadow-[0_0_300px_150px_rgba(0,242,255,0.15)] rounded-full" />
-         <div className="absolute bottom-[20%] right-[10%] w-[1px] h-[1px] shadow-[0_0_300px_150px_rgba(255,0,255,0.15)] rounded-full" />
+         <div className="absolute top-[20%] left-[10%] w-[1px] h-[1px] shadow-[0_0_300px_150px_rgba(163,0,255,0.15)] rounded-full" />
+         <div className="absolute bottom-[20%] right-[10%] w-[1px] h-[1px] shadow-[0_0_300px_150px_rgba(255,31,143,0.15)] rounded-full" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
@@ -83,10 +83,10 @@ export default function RaveAstra() {
            <Link href="/about" className="text-sm font-black uppercase tracking-[0.3em] text-white/50 hover:text-neon-cyan transition-colors border-b-2 border-transparent hover:border-neon-cyan pb-1">
              About Event
            </Link>
-           <motion.div 
+           <motion.div
              animate={{ scale: [1, 1.1, 1] }}
              transition={{ duration: 2, repeat: Infinity }}
-             className="bg-neon-magenta px-4 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-[0_0_15px_#ff00ff]"
+             className="bg-neon-magenta px-4 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-[0_0_15px_#ff1f8f]"
            >
              Registrations Are Live
            </motion.div>
@@ -117,7 +117,16 @@ export default function RaveAstra() {
             >
               <h1 className="text-[18vw] md:text-[13vw] font-black italic leading-[0.75] tracking-tighter uppercase">
                 <span className="text-layered-rave block skew-x-[-12deg]">RAVE</span>
-                <span className="text-white block skew-x-[-12deg] outline-text drop-shadow-[0_0_40px_rgba(255,0,255,0.6)]">ASTRA</span>
+                <span className="text-white block skew-x-[-12deg] outline-text drop-shadow-[0_0_40px_rgba(255,31,143,0.6)] relative">
+                  ASTRA
+                  <motion.span
+                    animate={{ rotate: [-8, 8, -8] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute -top-2 -right-2 md:-right-6 text-[5vw] md:text-[3vw] bg-neon-lime text-black px-3 py-1 shadow-[0_0_20px_#39ff14] not-italic"
+                  >
+                    2.0
+                  </motion.span>
+                </span>
               </h1>
             </motion.div>
 
@@ -135,29 +144,30 @@ export default function RaveAstra() {
                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                    className="relative z-10 w-64 h-80 md:w-80 md:h-[400px] border-[12px] border-white shadow-[20px_20px_0_rgba(0,0,0,0.5)] overflow-hidden"
                 >
-                  <img 
-                    src="/jason.png" 
-                    alt="Jason Thomas" 
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  <img
+                    src="/team/default-avatar.svg"
+                    alt="Upcoming Artist - Identity Hidden"
+                    className="w-full h-full object-cover transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
                 </motion.div>
-                
+
                 {/* Decorative Sticker elements */}
                 <div className="absolute -top-6 -left-6 z-20 bg-neon-lime text-black font-black p-3 rotate-[-15deg] shadow-lg text-sm uppercase">
                   Live Sets
                 </div>
                 <div className="absolute -bottom-4 -right-4 z-20 bg-neon-cyan text-black font-black p-3 rotate-[10deg] shadow-lg text-sm uppercase">
-                  Astra Headliner
+                  Mystery Headliner
                 </div>
               </div>
 
               {/* DJ Name Label */}
               <div className="mt-8">
-                <p className="text-neon-magenta text-sm uppercase font-black tracking-[0.5em] mb-2 drop-shadow-[0_0_5px_rgba(255,0,255,0.5)]">Starring</p>
+                <p className="text-neon-magenta text-sm uppercase font-black tracking-[0.5em] mb-2 drop-shadow-[0_0_5px_rgba(255,31,143,0.5)]">Coming Soon</p>
                 <h3 className="text-6xl md:text-9xl font-black italic uppercase tracking-tighter text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]">
-                  JASON THOMAS
+                  ???
                 </h3>
+                <p className="text-neon-cyan text-sm uppercase font-black tracking-[0.4em] mt-3">Guess The Upcoming Artist</p>
               </div>
             </motion.div>
           </div>
@@ -179,7 +189,7 @@ export default function RaveAstra() {
 
             <div className="flex flex-col items-center md:items-end space-y-10 w-full">
                <div className="text-center md:text-right">
-                 <h4 className="text-6xl md:text-8xl font-black text-neon-yellow italic tracking-tighter uppercase leading-none drop-shadow-[0_0_20px_rgba(248,255,0,0.8)]">
+                 <h4 className="text-6xl md:text-8xl font-black text-neon-yellow italic tracking-tighter uppercase leading-none drop-shadow-[0_0_20px_rgba(255,106,0,0.8)]">
                    MAY 16
                  </h4>
                  <p className="text-2xl md:text-3xl font-bold text-white/80 mt-2 tracking-widest uppercase italic">6:30 PM ONWARDS</p>
@@ -188,7 +198,7 @@ export default function RaveAstra() {
                {/* Red Location Box */}
                <motion.div 
                  whileHover={{ scale: 1.02 }}
-                 className="bg-location-box p-12 w-full relative group overflow-hidden border-4 border-neon-red/50 shadow-[0_0_40px_rgba(255,51,102,0.4)]"
+                 className="bg-location-box p-12 w-full relative group overflow-hidden border-4 border-neon-red/50 shadow-[0_0_40px_rgba(255,23,68,0.4)]"
                >
                  <div className="relative z-10">
                     <h3 className="text-sm font-black uppercase tracking-[0.5em] text-white/70 mb-3 flex items-center gap-2">
@@ -207,7 +217,7 @@ export default function RaveAstra() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, rotate: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  className="px-12 py-8 bg-white text-black font-black text-3xl uppercase tracking-[0.3em] shadow-[15px_15px_0_#ff00ff] flex items-center gap-4 group"
+                  className="px-12 py-8 bg-white text-black font-black text-3xl uppercase tracking-[0.3em] shadow-[15px_15px_0_#ff1f8f] flex items-center gap-4 group"
                 >
                   GET TICKETS <Ticket size={32} className="group-hover:rotate-12 transition-transform" />
                 </motion.a>
@@ -215,6 +225,62 @@ export default function RaveAstra() {
           </div>
         </div>
       </div>
+
+      {/* Rave Videos Section - New! */}
+      <section className="relative z-10 py-32 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-5xl md:text-8xl font-black italic uppercase tracking-tighter text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+              RAVE ASTRA <span className="text-neon-lime">RECAP</span>
+            </h2>
+            <p className="text-neon-magenta font-black uppercase tracking-[0.5em] mt-4 text-sm md:text-base">Relive Last Year&apos;s Madness</p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {[
+              { src: "/videos/rave-recap-1.mp4", tag: "Crowd", tilt: -3 },
+              { src: "/videos/rave-recap-2.mp4", tag: "Vibes", tilt: 2 },
+              { src: "/videos/rave-recap-3.mp4", tag: "Energy", tilt: -2 },
+            ].map((clip, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.85 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                animate={{ rotate: [clip.tilt, -clip.tilt, clip.tilt] }}
+                className="relative group"
+                style={{ transformOrigin: "center" }}
+              >
+                <motion.div
+                  whileHover={{ scale: 1.05, rotate: 0 }}
+                  className="relative aspect-[4/5] border-[10px] border-white shadow-2xl overflow-hidden bg-black"
+                >
+                  <video
+                    src={clip.src}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                </motion.div>
+                <div className={`absolute -top-5 z-20 font-black p-3 shadow-lg text-sm uppercase ${
+                  i % 3 === 0 ? "bg-neon-lime text-black -left-5 rotate-[-10deg]" : i % 3 === 1 ? "bg-neon-magenta text-white -right-5 rotate-[8deg]" : "bg-neon-cyan text-black -left-5 rotate-[10deg]"
+                }`}>
+                  {clip.tag}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Meet the Team Section - New! */}
       <section className="relative z-10 py-32 px-6 md:px-12 bg-black/30">
@@ -238,7 +304,7 @@ export default function RaveAstra() {
               { name: "Aneeqa", role: "Marketing", img: "/team/aneeqa.jpg", tilt: 2 },
               { name: "Anas", role: "Event Management", img: "/team/anas.jpg", tilt: 3 },
               { name: "Ayan", role: "Finance", img: "/team/ayan.jpg", tilt: -4 },
-              { name: "Zaynab", role: "Marketing", img: "/team/zainab.png", tilt: 2 },
+              { name: "Zaynab", role: "Marketing", img: "/team/default-avatar.svg", tilt: 2 },
               { name: "Qurat", role: "Marketing", img: "/team/qurat.png", tilt: -3 },
               { name: "Rehmani", role: "Event Management", img: "/team/rehmani.png", tilt: 4 },
               { name: "Ahmed Asim", role: "Event Management", img: "/team/ahmed.png", tilt: -2 },
@@ -287,12 +353,12 @@ export default function RaveAstra() {
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="inline-block text-2xl font-black uppercase tracking-tighter"
         >
-          REGISTRATIONS ARE LIVE NOW • LIMITED TICKETS REMAINING • JASON THOMAS LIVE • MAY 16TH • MEDIA STUDIO 154 CAMPUS • RAVE ASTRA • REGISTRATIONS ARE LIVE NOW • LIMITED TICKETS REMAINING • 
+          REGISTRATIONS ARE LIVE NOW • LIMITED TICKETS REMAINING • GUESS THE SECRET HEADLINER • MAY 16TH • MEDIA STUDIO 154 CAMPUS • RAVE ASTRA 2.0 • REGISTRATIONS ARE LIVE NOW • LIMITED TICKETS REMAINING •
         </motion.div>
       </div>
 
       {/* Premium Footer */}
-      <footer className="relative z-10 pt-32 pb-10 px-6 md:px-12 bg-[#050505] overflow-hidden">
+      <footer className="relative z-10 pt-32 pb-10 px-6 md:px-12 bg-[#0b0014] overflow-hidden">
         {/* Decorative Grid for Footer */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
         
@@ -355,11 +421,11 @@ export default function RaveAstra() {
         }
         .text-layered-rave {
           color: #fff;
-          text-shadow: 
-            0 0 10px #00f2ff,
-            0 0 20px #00f2ff,
-            0 0 40px #ff00ff,
-            0 0 80px #ff00ff;
+          text-shadow:
+            0 0 10px #a300ff,
+            0 0 20px #a300ff,
+            0 0 40px #ff1f8f,
+            0 0 80px #ff1f8f;
         }
       `}</style>
     </main>
