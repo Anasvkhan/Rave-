@@ -4,15 +4,15 @@
   --font-sans: var(--font-inter);
   --font-heading: var(--font-outfit);
 
-  --color-neon-cyan: #a300ff;
-  --color-neon-magenta: #ff1f8f;
-  --color-neon-lime: #39ff14;
-  --color-neon-yellow: #ff6a00;
-  --color-neon-red: #ff1744;
+  --color-neon-cyan: #ff7518;
+  --color-neon-magenta: #6bff3c;
+  --color-neon-lime: #9d4edd;
+  --color-neon-yellow: #ffb02e;
+  --color-neon-red: #b8001f;
 }
 
 :root {
-  --background: #3d0a5c;
+  --background: #0d0014;
   --foreground: #ffffff;
 }
 
@@ -20,7 +20,7 @@
   body {
     @apply text-white selection:bg-neon-cyan/30;
     font-family: var(--font-inter);
-    background: linear-gradient(160deg, #1a0633 0%, #5b0e73 22%, #c21a6b 50%, #ff5e3a 78%, #ffb400 100%);
+    background: linear-gradient(160deg, #03000a 0%, #1b0b2e 22%, #3a0a45 48%, #4a0e0e 74%, #0a0005 100%);
     min-height: 100vh;
   }
   h1, h2, h3, h4, h5, h6 {
@@ -30,30 +30,30 @@
 
 @layer utilities {
   .text-glow-cyan {
-    text-shadow: 0 0 10px rgba(163, 0, 255, 0.7), 0 0 20px rgba(163, 0, 255, 0.4);
+    text-shadow: 0 0 10px rgba(255, 117, 24, 0.7), 0 0 20px rgba(255, 117, 24, 0.4);
   }
   .text-glow-magenta {
-    text-shadow: 0 0 10px rgba(255, 31, 143, 0.7), 0 0 20px rgba(255, 31, 143, 0.4);
+    text-shadow: 0 0 10px rgba(107, 255, 60, 0.7), 0 0 20px rgba(107, 255, 60, 0.4);
   }
   .text-layered-rave {
     color: #fff;
     text-shadow:
-      0 0 5px #a300ff,
-      0 0 10px #a300ff,
-      0 0 20px #ff1f8f,
-      0 0 40px #ff1f8f;
+      0 0 5px #ff7518,
+      0 0 10px #ff7518,
+      0 0 20px #6bff3c,
+      0 0 40px #6bff3c;
   }
   .bg-location-box {
-    background: linear-gradient(135deg, #ff1744 0%, #4a0033 100%);
-    border: 3px solid #ff1744;
-    box-shadow: 0 0 20px rgba(255, 23, 68, 0.5);
+    background: linear-gradient(135deg, #b8001f 0%, #1a0005 100%);
+    border: 3px solid #b8001f;
+    box-shadow: 0 0 20px rgba(184, 0, 31, 0.5);
   }
   .neon-border {
-    box-shadow: 0 0 15px rgba(163, 0, 255, 0.3), inset 0 0 15px rgba(163, 0, 255, 0.3);
+    box-shadow: 0 0 15px rgba(255, 117, 24, 0.3), inset 0 0 15px rgba(255, 117, 24, 0.3);
     @apply border border-neon-cyan/50;
   }
   .audio-wave {
-    background: linear-gradient(180deg, transparent 0%, #a300ff 50%, transparent 100%);
+    background: linear-gradient(180deg, transparent 0%, #ff7518 50%, transparent 100%);
   }
 }
 

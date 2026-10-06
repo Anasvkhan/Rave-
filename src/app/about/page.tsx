@@ -11,7 +11,7 @@ export default function AboutPage() {
       
       {/* Background Decor */}
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(163,0,255,0.12),transparent_70%)]" />
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(255,117,24,0.12),transparent_70%)]" />
       </div>
 
       <nav className="relative z-10 mb-16">
@@ -102,7 +102,7 @@ export default function AboutPage() {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="px-16 py-8 bg-white text-black font-black text-2xl uppercase tracking-[0.3em] shadow-[10px_10px_0_#ff1f8f]"
+              className="px-16 py-8 bg-white text-black font-black text-2xl uppercase tracking-[0.3em] shadow-[10px_10px_0_#6bff3c]"
             >
               Get Your Tickets
             </motion.button>

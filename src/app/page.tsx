@@ -28,8 +28,8 @@ export default function RaveAstra() {
       
       {/* Background Layer */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-         <div className="absolute top-[20%] left-[10%] w-[1px] h-[1px] shadow-[0_0_300px_150px_rgba(163,0,255,0.15)] rounded-full" />
-         <div className="absolute bottom-[20%] right-[10%] w-[1px] h-[1px] shadow-[0_0_300px_150px_rgba(255,31,143,0.15)] rounded-full" />
+         <div className="absolute top-[20%] left-[10%] w-[1px] h-[1px] shadow-[0_0_300px_150px_rgba(255,117,24,0.15)] rounded-full" />
+         <div className="absolute bottom-[20%] right-[10%] w-[1px] h-[1px] shadow-[0_0_300px_150px_rgba(107,255,60,0.15)] rounded-full" />
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
@@ -42,7 +42,7 @@ export default function RaveAstra() {
            <motion.div
              animate={{ scale: [1, 1.1, 1] }}
              transition={{ duration: 2, repeat: Infinity }}
-             className="bg-neon-magenta px-4 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-[0_0_15px_#ff1f8f]"
+             className="bg-neon-magenta px-4 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-[0_0_15px_#6bff3c]"
            >
              Registrations Are Live
            </motion.div>
@@ -73,12 +73,12 @@ export default function RaveAstra() {
             >
               <h1 className="text-[18vw] md:text-[13vw] font-black italic leading-[0.75] tracking-tighter uppercase">
                 <span className="text-layered-rave block skew-x-[-12deg]">RAVE</span>
-                <span className="text-white block skew-x-[-12deg] outline-text drop-shadow-[0_0_40px_rgba(255,31,143,0.6)] relative">
+                <span className="text-white block skew-x-[-12deg] outline-text drop-shadow-[0_0_40px_rgba(107,255,60,0.6)] relative">
                   ASTRA
                   <motion.span
                     animate={{ rotate: [-8, 8, -8] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -top-2 -right-2 md:-right-6 text-[5vw] md:text-[3vw] bg-neon-lime text-black px-3 py-1 shadow-[0_0_20px_#39ff14] not-italic"
+                    className="absolute -top-2 -right-2 md:-right-6 text-[5vw] md:text-[3vw] bg-neon-lime text-black px-3 py-1 shadow-[0_0_20px_#9d4edd] not-italic"
                   >
                     2.0
                   </motion.span>
@@ -119,7 +119,7 @@ export default function RaveAstra() {
 
               {/* DJ Name Label */}
               <div className="mt-8">
-                <p className="text-neon-magenta text-sm uppercase font-black tracking-[0.5em] mb-2 drop-shadow-[0_0_5px_rgba(255,31,143,0.5)]">Coming Soon</p>
+                <p className="text-neon-magenta text-sm uppercase font-black tracking-[0.5em] mb-2 drop-shadow-[0_0_5px_rgba(107,255,60,0.5)]">Coming Soon</p>
                 <h3 className="text-6xl md:text-9xl font-black italic uppercase tracking-tighter text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]">
                   ???
                 </h3>
@@ -141,7 +141,7 @@ export default function RaveAstra() {
                 transition={{ duration: 2, repeat: Infinity }}
                 className="bg-black/40 backdrop-blur-md px-10 py-6 rounded-2xl border border-white/10"
               >
-                <span className="text-4xl md:text-6xl font-black italic uppercase text-neon-cyan drop-shadow-[0_0_20px_rgba(163,0,255,0.6)]">
+                <span className="text-4xl md:text-6xl font-black italic uppercase text-neon-cyan drop-shadow-[0_0_20px_rgba(255,117,24,0.6)]">
                   Coming Soon
                 </span>
               </motion.div>
@@ -155,7 +155,7 @@ export default function RaveAstra() {
                {/* Red Location Box */}
                <motion.div
                  whileHover={{ scale: 1.02 }}
-                 className="bg-location-box p-12 w-full relative group overflow-hidden border-4 border-neon-red/50 shadow-[0_0_40px_rgba(255,23,68,0.4)]"
+                 className="bg-location-box p-12 w-full relative group overflow-hidden border-4 border-neon-red/50 shadow-[0_0_40px_rgba(184,0,31,0.4)]"
                >
                  <div className="relative z-10">
                     <h3 className="text-sm font-black uppercase tracking-[0.5em] text-white/70 mb-3 flex items-center gap-2">
@@ -175,7 +175,7 @@ export default function RaveAstra() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, rotate: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  className="px-12 py-8 bg-white text-black font-black text-3xl uppercase tracking-[0.3em] shadow-[15px_15px_0_#ff1f8f] flex items-center gap-4 group"
+                  className="px-12 py-8 bg-white text-black font-black text-3xl uppercase tracking-[0.3em] shadow-[15px_15px_0_#6bff3c] flex items-center gap-4 group"
                 >
                   GET TICKETS <Ticket size={32} className="group-hover:rotate-12 transition-transform" />
                 </motion.a>
@@ -379,10 +379,10 @@ export default function RaveAstra() {
         .text-layered-rave {
           color: #fff;
           text-shadow:
-            0 0 10px #a300ff,
-            0 0 20px #a300ff,
-            0 0 40px #ff1f8f,
-            0 0 80px #ff1f8f;
+            0 0 10px #ff7518,
+            0 0 20px #ff7518,
+            0 0 40px #6bff3c,
+            0 0 80px #6bff3c;
         }
       `}</style>
     </main>
