@@ -39,24 +39,17 @@ export default function RaveAstra() {
            <Link href="/about" className="text-sm font-black uppercase tracking-[0.3em] text-white/50 hover:text-neon-cyan transition-colors border-b-2 border-transparent hover:border-neon-cyan pb-1">
              About Event
            </Link>
-           <motion.div
-             animate={{ scale: [1, 1.1, 1] }}
-             transition={{ duration: 2, repeat: Infinity }}
-             className="bg-neon-magenta px-4 py-1 text-[10px] font-black uppercase tracking-widest text-white shadow-[0_0_15px_#6bff3c]"
-           >
-             Registrations Are Live
-           </motion.div>
         </nav>
 
-        {/* Header: Performing Arts Society PRESENTS */}
-        <motion.div 
+        {/* Header: Rave Astra PRESENTS */}
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="flex flex-col items-center md:items-start mt-10 mb-20"
         >
           <div className="border-4 border-white px-10 py-6 flex flex-col items-center justify-center bg-black/50 backdrop-blur-md">
             <h2 className="text-4xl md:text-6xl font-black tracking-[-0.05em] leading-none flex flex-col items-center md:items-start gap-2">
-              <span className="text-neon-cyan">PERFORMING ARTS SOCIETY</span>
+              <span className="text-neon-cyan">RAVE ASTRA</span>
               <span className="text-white/70 text-2xl md:text-4xl tracking-[0.4em]">PRESENTS</span>
             </h2>
           </div>
@@ -203,7 +196,6 @@ export default function RaveAstra() {
             {[
               { src: "/videos/rave-recap-1.mp4", tag: "Crowd", tilt: -3 },
               { src: "/videos/rave-recap-2.mp4", tag: "Vibes", tilt: 2 },
-              { src: "/videos/rave-recap-3.mp4", tag: "Energy", tilt: -2 },
               { src: "/videos/rave-recap-4.mp4", tag: "Lights", tilt: 3 },
               { src: "/videos/rave-recap-5.mp4", tag: "Bass", tilt: -2 },
               { src: "/videos/rave-recap-6.mp4", tag: "Afterparty", tilt: 2 },
@@ -310,7 +302,7 @@ export default function RaveAstra() {
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="inline-block text-2xl font-black uppercase tracking-tighter"
         >
-          REGISTRATIONS ARE LIVE NOW • LIMITED TICKETS REMAINING • GUESS THE SECRET HEADLINER • COMING SOON • GUESS THE LOCATION • RAVE ASTRA 2.0 • REGISTRATIONS ARE LIVE NOW • LIMITED TICKETS REMAINING •
+          LIMITED TICKETS REMAINING • GUESS THE SECRET HEADLINER • COMING SOON • GUESS THE LOCATION • RAVE ASTRA 2.0 • LIMITED TICKETS REMAINING •
         </motion.div>
       </div>
 
@@ -326,9 +318,9 @@ export default function RaveAstra() {
             className="mb-16 text-center"
           >
             <div className="border-2 border-white/20 px-8 py-4 inline-block mb-4">
-               <h2 className="text-4xl md:text-6xl font-black tracking-[-0.1em] text-white">PAS</h2>
+               <h2 className="text-4xl md:text-6xl font-black tracking-[-0.1em] text-white">RAVE ASTRA</h2>
             </div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.6em] text-neon-cyan">Performing Arts Society</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.6em] text-neon-cyan">Rave Astra</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 w-full text-center md:text-left border-t border-white/10 pt-16">
@@ -356,13 +348,13 @@ export default function RaveAstra() {
             </div>
             <div className="md:text-right">
                <h4 className="text-neon-lime font-black uppercase tracking-widest mb-6">Contact</h4>
-               <p className="text-sm font-bold text-white/50 mb-2">INFO@PAS-RAVE.COM</p>
+               <p className="text-sm font-bold text-white/50 mb-2">INFO@RAVEASTRA.COM</p>
                <p className="text-sm font-bold text-white/50">+92 300 ASTRA-00</p>
             </div>
           </div>
 
           <div className="mt-32 w-full flex flex-col md:flex-row justify-between items-center text-[10px] font-black uppercase tracking-[0.4em] text-white/20 border-t border-white/5 pt-8">
-            <p>© 2026 PERFORMING ARTS SOCIETY. ALL RIGHTS RESERVED.</p>
+            <p>© 2026 RAVE ASTRA. ALL RIGHTS RESERVED.</p>
             <p>DESIGNED FOR THE COSMOS</p>
           </div>
         </div>

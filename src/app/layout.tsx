@@ -14,7 +14,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "RAVE ASTRA 2.0 | Secret Headliner Live",
-  description: "Join the most electrifying rave of the year. RAVE ASTRA 2.0 presented by PAS. Date and location coming soon.",
+  description: "Join the most electrifying rave of the year. RAVE ASTRA 2.0. Date and location coming soon.",
 };
 
 export default function RootLayout({

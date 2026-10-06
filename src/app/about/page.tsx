@@ -68,7 +68,7 @@ export default function AboutPage() {
               <h2 className="text-2xl font-black uppercase tracking-widest">The Society</h2>
             </div>
             <p className="text-white/60 leading-loose">
-              Performing Arts Society (PAS) is a collective of creators, dreamers, and audiophiles. We believe that art is better when it's shared on a dancefloor. Our mission is to provide a platform for electronic talent and immersive experiences.
+              Rave Astra is a collective of creators, dreamers, and audiophiles. We believe that art is better when it's shared on a dancefloor. Our mission is to provide a platform for electronic talent and immersive experiences.
             </p>
           </motion.div>
         </div>
