@@ -9,18 +9,19 @@
   --color-neon-lime: #39ff14;
   --color-neon-yellow: #ff6a00;
   --color-neon-red: #ff1744;
-  --color-dark-bg: #0b0014;
 }
 
 :root {
-  --background: #0b0014;
+  --background: #3d0a5c;
   --foreground: #ffffff;
 }
 
 @layer base {
   body {
-    @apply bg-dark-bg text-white selection:bg-neon-cyan/30;
+    @apply text-white selection:bg-neon-cyan/30;
     font-family: var(--font-inter);
+    background: linear-gradient(160deg, #1a0633 0%, #5b0e73 22%, #c21a6b 50%, #ff5e3a 78%, #ffb400 100%);
+    min-height: 100vh;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-outfit);

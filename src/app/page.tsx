@@ -1,53 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Calendar, MapPin, Music, Ticket, Zap, Waves, Glasses, Sparkles, Compass, Star, Clock } from "lucide-react";
+import { MapPin, Ticket, Compass, Clock } from "lucide-react";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
-
-const CountdownTimer = () => {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-
-  useEffect(() => {
-    const targetDate = new Date("May 16, 2026 18:30:00").getTime();
-
-    const interval = setInterval(() => {
-      const now = new Date().getTime();
-      const difference = targetDate - now;
-
-      if (difference <= 0) {
-        clearInterval(interval);
-      } else {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((difference % (1000 * 60)) / 1000),
-        });
-      }
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div className="flex gap-4 md:gap-8 bg-black/40 backdrop-blur-md p-6 rounded-2xl border border-white/10">
-      {[
-        { label: "Days", value: timeLeft.days },
-        { label: "Hours", value: timeLeft.hours },
-        { label: "Mins", value: timeLeft.minutes },
-        { label: "Secs", value: timeLeft.seconds },
-      ].map((item, index) => (
-        <div key={index} className="flex flex-col items-center min-w-[60px]">
-          <span className="text-3xl md:text-5xl font-black text-neon-cyan italic drop-shadow-[0_0_10px_rgba(163,0,255,0.5)]">
-            {item.value.toString().padStart(2, '0')}
-          </span>
-          <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/50">{item.label}</span>
-        </div>
-      ))}
-    </div>
-  );
-};
+import React from "react";
 
 const AudioVisualizer = () => {
   return (
@@ -68,7 +24,7 @@ const AudioVisualizer = () => {
 
 export default function RaveAstra() {
   return (
-    <main className="min-h-screen bg-[#0b0014] text-white overflow-hidden relative selection:bg-neon-magenta/40 font-sans pb-20">
+    <main className="min-h-screen text-white overflow-hidden relative selection:bg-neon-magenta/40 font-sans pb-20">
       
       {/* Background Layer */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -175,12 +131,20 @@ export default function RaveAstra() {
           {/* Right Side: Details & Timer */}
           <div className="w-full md:w-2/5 flex flex-col items-center md:items-end space-y-16">
             
-            {/* Timer - Now functional and prominent */}
+            {/* Coming Soon Badge */}
             <div className="flex flex-col items-center md:items-end gap-4">
               <p className="text-xs font-black uppercase tracking-[0.5em] text-white/50 flex items-center gap-2">
-                <Clock size={16} className="text-neon-cyan" /> Event Countdown
+                <Clock size={16} className="text-neon-cyan" /> Event Status
               </p>
-              <CountdownTimer />
+              <motion.div
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="bg-black/40 backdrop-blur-md px-10 py-6 rounded-2xl border border-white/10"
+              >
+                <span className="text-4xl md:text-6xl font-black italic uppercase text-neon-cyan drop-shadow-[0_0_20px_rgba(163,0,255,0.6)]">
+                  Coming Soon
+                </span>
+              </motion.div>
             </div>
 
             <div className="w-full py-8 border-y border-white/10">
@@ -188,15 +152,8 @@ export default function RaveAstra() {
             </div>
 
             <div className="flex flex-col items-center md:items-end space-y-10 w-full">
-               <div className="text-center md:text-right">
-                 <h4 className="text-6xl md:text-8xl font-black text-neon-yellow italic tracking-tighter uppercase leading-none drop-shadow-[0_0_20px_rgba(255,106,0,0.8)]">
-                   MAY 16
-                 </h4>
-                 <p className="text-2xl md:text-3xl font-bold text-white/80 mt-2 tracking-widest uppercase italic">6:30 PM ONWARDS</p>
-               </div>
-
                {/* Red Location Box */}
-               <motion.div 
+               <motion.div
                  whileHover={{ scale: 1.02 }}
                  className="bg-location-box p-12 w-full relative group overflow-hidden border-4 border-neon-red/50 shadow-[0_0_40px_rgba(255,23,68,0.4)]"
                >
@@ -205,8 +162,9 @@ export default function RaveAstra() {
                       <MapPin size={18} /> Location:
                     </h3>
                     <p className="text-4xl md:text-6xl font-black uppercase leading-tight italic text-white">
-                      MEDIA STUDIO <br/> 154 CAMPUS
+                      ???
                     </p>
+                    <p className="text-sm font-black uppercase tracking-[0.4em] text-white/80 mt-3">Guess The Location?</p>
                  </div>
                  <Compass className="absolute -right-4 -bottom-4 w-40 h-40 text-white/10 rotate-12 group-hover:rotate-[372deg] transition-transform duration-[3000ms]" />
                </motion.div>
@@ -246,6 +204,9 @@ export default function RaveAstra() {
               { src: "/videos/rave-recap-1.mp4", tag: "Crowd", tilt: -3 },
               { src: "/videos/rave-recap-2.mp4", tag: "Vibes", tilt: 2 },
               { src: "/videos/rave-recap-3.mp4", tag: "Energy", tilt: -2 },
+              { src: "/videos/rave-recap-4.mp4", tag: "Lights", tilt: 3 },
+              { src: "/videos/rave-recap-5.mp4", tag: "Bass", tilt: -2 },
+              { src: "/videos/rave-recap-6.mp4", tag: "Afterparty", tilt: 2 },
             ].map((clip, i) => (
               <motion.div
                 key={i}
@@ -301,13 +262,9 @@ export default function RaveAstra() {
             {[
               { name: "Deerain", role: "Finance", img: "/team/deerain.jpg", tilt: -2 },
               { name: "Wasay", role: "General Secretary", img: "/team/wasay.jpg", tilt: -3 },
-              { name: "Aneeqa", role: "Marketing", img: "/team/aneeqa.jpg", tilt: 2 },
               { name: "Anas", role: "Event Management", img: "/team/anas.jpg", tilt: 3 },
               { name: "Ayan", role: "Finance", img: "/team/ayan.jpg", tilt: -4 },
-              { name: "Zaynab", role: "Marketing", img: "/team/default-avatar.svg", tilt: 2 },
-              { name: "Qurat", role: "Marketing", img: "/team/qurat.png", tilt: -3 },
               { name: "Rehmani", role: "Event Management", img: "/team/rehmani.png", tilt: 4 },
-              { name: "Ahmed Asim", role: "Event Management", img: "/team/ahmed.png", tilt: -2 },
             ].map((member, i) => (
               <motion.div
                 key={i}
@@ -353,12 +310,12 @@ export default function RaveAstra() {
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="inline-block text-2xl font-black uppercase tracking-tighter"
         >
-          REGISTRATIONS ARE LIVE NOW • LIMITED TICKETS REMAINING • GUESS THE SECRET HEADLINER • MAY 16TH • MEDIA STUDIO 154 CAMPUS • RAVE ASTRA 2.0 • REGISTRATIONS ARE LIVE NOW • LIMITED TICKETS REMAINING •
+          REGISTRATIONS ARE LIVE NOW • LIMITED TICKETS REMAINING • GUESS THE SECRET HEADLINER • COMING SOON • GUESS THE LOCATION • RAVE ASTRA 2.0 • REGISTRATIONS ARE LIVE NOW • LIMITED TICKETS REMAINING •
         </motion.div>
       </div>
 
       {/* Premium Footer */}
-      <footer className="relative z-10 pt-32 pb-10 px-6 md:px-12 bg-[#0b0014] overflow-hidden">
+      <footer className="relative z-10 pt-32 pb-10 px-6 md:px-12 overflow-hidden">
         {/* Decorative Grid for Footer */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
         

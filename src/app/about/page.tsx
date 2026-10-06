@@ -7,7 +7,7 @@ import React from "react";
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-[#0b0014] text-white overflow-hidden relative selection:bg-neon-magenta/40 font-sans p-6 md:p-12">
+    <main className="min-h-screen text-white overflow-hidden relative selection:bg-neon-magenta/40 font-sans p-6 md:p-12">
       
       {/* Background Decor */}
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
